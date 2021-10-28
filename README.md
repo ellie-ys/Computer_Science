@@ -20,3 +20,4 @@
 
 # Reference
 - [Computer_Science_Study](https://github.com/kkw-11/Computer_Science_Study)
+- [Teach Yourself Computer Science](https://github.com/minnsane/TeachYourselfCS-KR)
