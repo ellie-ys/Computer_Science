@@ -19,4 +19,4 @@
 - Web
 
 # Reference
-(Computer_Science_Study)[https://github.com/kkw-11/Computer_Science_Study]
+- [Computer_Science_Study](https://github.com/kkw-11/Computer_Science_Study)
