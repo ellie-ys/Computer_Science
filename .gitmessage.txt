@@ -8,13 +8,10 @@
 # 폴더명
 # [Algorithm]
 # [Data_Structure] 
-# [Operating_System]
-# [Computer Architecture]
-# [Programming_Language]
-# [System_Programming]
+# [Javascript]
 # [Linux]
-# [Database]
-# [Network]
+# [Python]
+# [System_Programming]
 # [Web]
 # 빌드 부분 혹은 패키지 매니저 수정사항
 # [chore] 
