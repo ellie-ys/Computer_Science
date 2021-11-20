@@ -9,14 +9,12 @@
 - Algorithm
 - Cloud
 - Data structure
-- Database
 - Linux
 - Network
 - Programming Language
    - python
    - javascript
-- System programming
-- Web
+
 
 # Reference
 - [Computer_Science_Study](https://github.com/kkw-11/Computer_Science_Study)
