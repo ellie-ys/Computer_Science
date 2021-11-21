@@ -1,3 +1,4 @@
+#순서의index를  보여주는게 아니고, 입력한 값대로 배정순을 보여주어야함.) -> 해결
 names = ["azad","andy","louis","will","edward"]	
 
 
@@ -14,20 +15,22 @@ def solution( names, homes, grades):
         home_list.append(homes[i][0]**2+homes[i][1]**2)
         stu_list.append([names[i], home_list[i], int(grades[i])])
 
-    print(stu_list)
+
     answers = sorted(stu_list, key = lambda x : x[0])
 
     answers = sorted(answers , key = lambda x : (-x[2], -x[1]))
     
-  
 
-    # print(answers)
-    
     answer = []
+    print(answers)
     for i in range(len(answers)):
-        answer.append(names.index(answers[i][0]) + 1)
+        answer.append(answers[i][0])
+    print(answer)
+    ys = []
+    for i in range(len(answers)):
+        ys.append(answer.index(names[i]) + 1)
 
 
-    return answer
+    return ys
 
 print(solution(names, homes, grades))
