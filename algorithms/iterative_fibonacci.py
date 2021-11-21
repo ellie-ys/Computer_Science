@@ -1,21 +1,18 @@
+#python unpacking, packing 사용
 def fibonacci(n):
     s = 1
-    while n >= 2:
-        s = (n-1) + (n-2)
-        n -= 1
-
-    return s
+    if n < 2:
+        return n
+    a,b = 0, 1
+    for i in range(n-1):
+        a, b = b, a+b
+    return b
 
 
 n = int(input())
 
-print(fibonacci(n))
+for n in range(1, n+1):
+    print(n, fibonacci(n))
 
 
-# 삼항 연산자 사용
-# def fibo(n):
-#     return fibo(n-1) + fibo(n-2) if n>=2 else n
-
-
-# for n in range(1, 11):
-#     print(n, fibo(n))
+#refer : https://www.python.org/ 피보나치 함수
