@@ -86,10 +86,77 @@ SQLAlchemy - ORM의 python버전.
 
 페이지에 폼이 있다. (그리고 클라이언트 뒤에 서버가 있고?)
 
-1. **request.form** 폼 데이터 가져옴
-2. **and*, or*** 정보 <-> DB
-3. 가져온 정보 RETURN 해주기
+### 1. **request.form** 폼 데이터 가져옴
+
+
+**request**
+flask는 이걸 받아요.
+클라이언트가 post로 무엇을 보내면
+request 안에 정보가 담긴다
+ - > 시간, ip, 운영체제, 브라우저 정보 등등
+```
+from flask import Blueprint, render_template, request, url_for, session, flash
+from rabbit_delivery.models import *
+from werkzeug.utils import redirect
+```
+request.form - 유사 dict형태로 받아옴
+```
+request.form['user_id]
+```
+이런식으로 가져온다.
+
+### 2. **and*, or*** 정보 <-> DB
+form 에서는 name을 가지고 온다.
+search.html
+```
+  <body>
+    <form action="/search" method="POST">
+      <p>이름<input type="text" id="keyword" name="keyword1" /></p>
+      <p>나이<input type="text" id="keyword" name="keyword2" /></p>
+      <p>
+        <input type="radio" name="condition" value="1" checked="checked" />and
+        <input type="radio" name="condition" value="2" />or
+      </p>
+      <input type="submit" value="검색" />
+    </form>
+  </body>
+```
+api.py
+```
+from flask import redirect, request, render_template, jsonify, Blueprint
+from models import User
+from db_connect import db
+from sqlalchemy import and_, or_
+
+
+friends = Blueprint('friends',__name__)
+
+@friends.route('/search', methods=['GET', 'POST'])
+def user_search():
+    if request.method == 'POST':
+        key1 = request.form['keyword1']
+        key2 = request.form['keyword2']
+        #radio box 사용
+        con = request.form['condition']
+        if(con=='1'): #and
+            user_list = User.query.filter(or_(User.name == key1, User.age ==key2)).all()
+        elif(con=='2'):
+            user_list = User.query.filter(or_(User.name == key1,User.age ==key2)).all()
+        return render_template('member_list.html', user_list=user_list)
+    else:
+        return render_template('search.html')
+
+
+@friends.route('/list')
+def user_list():
+    user_list = User.query.all()
+    return render_template('member_list.html', user_list=user_list)
 
 ```
 
-```
+user_search() 함수 기능
+and 및 or 검색 결과
+
+
+
+### 3. 가져온 정보 RETURN 해주기
