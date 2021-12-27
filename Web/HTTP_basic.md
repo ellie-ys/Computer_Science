@@ -1,6 +1,6 @@
 # HTTP
-
-## Hypertext Transfer Protocol
+Hypertext(=textmedia)를 전송하는 protocol의 약자.
+## Hypertext Transfer Protocol 
 
     * Hypertext
         - 현재는 Hypermedia에 가깝다.
@@ -17,28 +17,31 @@
 ## 역사
 
 - HTTP (1989)
-- HTTPS (1994)
-- HTTP v1 (1997)
+- HTTPS (1994) 
+  - HTTP에 보안 개선된 (SECURE 추가) 프로토콜
+  - SSL, TLS와 같은 암호화된 안전한 방식으로 주고받기 때문에 제 3자가 그 내용을 볼 수 없다. 보안관계가 형성된 서버와 클라이언트가 데이터 주고받는 형태, 보안관계가 형성되지않은 제 3자는 볼 수 없음.
 
+- HTTP v1 (1997) : HTTP, HTTPS 둘 다 지원
   - 전세계 30%정도
-  - HTTP, HTTPS 둘 다 지원
   - text-based로 데이터 통신
-  - uncompressed headers
-  - one file at a time
-  - inefficient
+  - uncompressed headers 압축하지 않아 사이즈가 크다.
+  - one file at a time 한번에 한파일만 주고받음
+  - inefficient  비효율적임
 
 - HTTP v2 (2015)
-
-  - 전세계 50%정도, 대부분 HTTPS
-  - HTTP v1에 비해 efficient와 secure 개선
-  - binary based protocol
+  - 전세계 50%정도
+  - HTTP, HTTPS 둘 다 지원
+  - 우리가 사용하는 대부분의 브라우저에서는 HTTPS만 허용해줌
+  - HTTP v1 개선, efficient와 secure 개선
+  - binary based protocol - raw data형태로
   - header compression
-  - multiplexing : 여러개파일 동시에 주고받음.
+  - multiplexing : 여러개 파일 동시에 주고받음.
   - stream prioritization
     **현재는 v2 기준으로 정리**
 
 - HTTP v3 (2019~)
-  - HTTPS만 지원
+  - HTTP v2와 비슷, HTTPS만 지원
+  - 크롬브라우저는 베타버전만 지원
   - 기존 TCP -> UDP 프로토콜 베이스 바뀜
 
 ## 특징
