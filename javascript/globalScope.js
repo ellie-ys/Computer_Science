@@ -8,13 +8,12 @@ const callMyNightSky = () => {
 
 console.log(callMyNightSky());
 
-//
-
+// Another exercise
+// ReferenceError
 const logVisibleLightWaves = () => {
   const lightWaves = "Moonlight";
   console.log(lightWaves);
 };
 
 logVisibleLightWaves();
-// ReferenceError
 //console.log(lightWaves);
