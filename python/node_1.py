@@ -32,7 +32,8 @@ dot = Node('enjoys spending time in movie lots')
 
 
 # yacko can keep track of dot and dot can keep up with wacko
-
+# yacko to dot
+# dot to wacko
 yacko.set_link_node(dot)
 dot.set_link_node(wacko)
 
