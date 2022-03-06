@@ -28,3 +28,10 @@ class Node:
 yacko = Node('likes to yak')
 wacko = Node('has a penchant for hoarding snacks')
 dot = Node('enjoys spending time in movie lots')
+
+
+
+# yacko can keep track of dot and dot can keep up with wacko
+
+yacko.set_link_node(dot)
+dot.set_link_node(wacko)
