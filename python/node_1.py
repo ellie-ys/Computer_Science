@@ -35,3 +35,14 @@ dot = Node('enjoys spending time in movie lots')
 
 yacko.set_link_node(dot)
 dot.set_link_node(wacko)
+
+
+
+# Create two new variables, dots_data, and wackos_data. Use both getter methods to get dot‘s value from yacko and get wacko‘s value from dot
+
+dots_data = yacko.get_link_node().get_value()
+wackos_data = dot.get_link_node().get_value()
+
+
+print(dots_data)
+print(wackos_data)
