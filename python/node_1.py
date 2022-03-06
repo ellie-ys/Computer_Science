@@ -15,3 +15,9 @@ class Node:
 
   def get_link_node(self):
     return self.link_node
+
+# 생성시에만 노드 값을 설정할 수 있다.
+# 그러나, 노드의 링크 업데이트 허용
+# setter 사용
+def set_link_node(self, link_node):
+    self.link_node = link_node
